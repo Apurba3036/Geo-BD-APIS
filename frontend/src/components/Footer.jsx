@@ -21,7 +21,7 @@ const Footer = () => {
               <span className="font-semibold text-lg">GeoBD API</span>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
-              Bangladesh's official open geo API platform. Free, fast, and developer-friendly access to geographical data. Visit geobd.vercel.com
+              Bangladesh's official open geo API platform. Free, fast, and developer-friendly access to geographical data. Visit geo-bd-apis.onrender.com
             </p>
             <div className="flex space-x-4">
               <a

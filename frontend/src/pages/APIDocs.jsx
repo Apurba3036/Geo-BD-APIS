@@ -17,7 +17,7 @@ const APIDocs = () => {
           method: 'GET',
           path: '/api/divisions',
           description: 'Get all 8 divisions of Bangladesh',
-          example: `curl https://geobd.vercel.com/api/divisions`,
+          example: `curl https://geo-bd-apis.onrender.com/api/divisions`,
           response: `{
   "success": true,
   "data": [
@@ -37,7 +37,7 @@ const APIDocs = () => {
           method: 'GET',
           path: '/api/divisions/:id',
           description: 'Get a specific division by ID',
-          example: `curl https://geobd.vercel.com/api/divisions/1`,
+          example: `curl https://geo-bd-apis.onrender.com/api/divisions/1`,
           response: `{
   "success": true,
   "data": {
@@ -54,7 +54,7 @@ const APIDocs = () => {
           method: 'GET',
           path: '/api/divisions/:id/districts',
           description: 'Get division with all its districts',
-          example: `curl https://geobd.vercel.com/api/divisions/1/districts`,
+          example: `curl https://geo-bd-apis.onrender.com/api/divisions/1/districts`,
           response: `{
   "success": true,
   "data": {
@@ -85,7 +85,7 @@ const APIDocs = () => {
           method: 'GET',
           path: '/api/districts',
           description: 'Get all 64 districts of Bangladesh',
-          example: `curl https://geobd.vercel.com/api/districts`,
+          example: `curl https://geo-bd-apis.onrender.com/api/districts`,
           response: `{
   "success": true,
   "data": [
@@ -111,7 +111,7 @@ const APIDocs = () => {
           method: 'GET',
           path: '/api/districts?division_id=:id',
           description: 'Get districts by division ID',
-          example: `curl https://geobd.vercel.com/api/districts?division_id=2`,
+          example: `curl https://geo-bd-apis.onrender.com/api/districts?division_id=2`,
           response: `{
   "success": true,
   "data": [
@@ -137,7 +137,7 @@ const APIDocs = () => {
           method: 'GET',
           path: '/api/districts/search?q=:query',
           description: 'Search districts by name (English or Bengali)',
-          example: `curl https://geobd.vercel.com/api/districts/search?q=Pabna`,
+          example: `curl https://geo-bd-apis.onrender.com/api/districts/search?q=Pabna`,
           response: `{
   "success": true,
   "data": [
@@ -169,7 +169,7 @@ const APIDocs = () => {
           method: 'GET',
           path: '/api/upazilas',
           description: 'Get all upazilas of Bangladesh',
-          example: `curl https://geobd.vercel.com/api/upazilas`,
+          example: `curl https://geo-bd-apis.onrender.com/api/upazilas`,
           response: `{
   "success": true,
   "data": [
@@ -193,7 +193,7 @@ const APIDocs = () => {
           method: 'GET',
           path: '/api/upazilas?district_id=:id',
           description: 'Get upazilas by district ID',
-          example: `curl https://geobd.vercel.com/api/upazilas?district_id=13`,
+          example: `curl https://geo-bd-apis.onrender.com/api/upazilas?district_id=13`,
           response: `{
   "success": true,
   "data": [
@@ -217,7 +217,7 @@ const APIDocs = () => {
           method: 'GET',
           path: '/api/upazilas/search?q=:query',
           description: 'Search upazilas by name (English or Bengali)',
-          example: `curl https://geobd.vercel.com/api/upazilas/search?q=Debidwar`,
+          example: `curl https://geo-bd-apis.onrender.com/api/upazilas/search?q=Debidwar`,
           response: `{
   "success": true,
   "data": [
@@ -247,7 +247,7 @@ const APIDocs = () => {
           method: 'GET',
           path: '/api/unions',
           description: 'Get all unions of Bangladesh',
-          example: `curl https://geobd.vercel.com/api/unions`,
+          example: `curl https://geo-bd-apis.onrender.com/api/unions`,
           response: `{
   "success": true,
   "data": [
@@ -271,7 +271,7 @@ const APIDocs = () => {
           method: 'GET',
           path: '/api/unions?upazila_id=:id',
           description: 'Get unions by upazila ID',
-          example: `curl https://geobd.vercel.com/api/unions?upazila_id=85`,
+          example: `curl https://geo-bd-apis.onrender.com/api/unions?upazila_id=85`,
           response: `{
   "success": true,
   "data": [
@@ -295,7 +295,7 @@ const APIDocs = () => {
           method: 'GET',
           path: '/api/unions/:id',
           description: 'Get a specific union by ID',
-          example: `curl https://geobd.vercel.com/api/unions/1`,
+          example: `curl https://geo-bd-apis.onrender.com/api/unions/1`,
           response: `{
   "success": true,
   "data": {
@@ -316,7 +316,7 @@ const APIDocs = () => {
           method: 'GET',
           path: '/api/unions/search?q=:query',
           description: 'Search unions by name (English or Bengali)',
-          example: `curl https://geobd.vercel.com/api/unions/search?q=Baragachhia`,
+          example: `curl https://geo-bd-apis.onrender.com/api/unions/search?q=Baragachhia`,
           response: `{
   "success": true,
   "data": [

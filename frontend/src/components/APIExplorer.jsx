@@ -59,7 +59,7 @@ const APIExplorer = () => {
       setLoading(true)
       const response = await geoAPI.getDivisions()
       setDivisions(response.data.data)
-      updateAPIResponse('https://geobd.vercel.com/api/divisions', response.data)
+      updateAPIResponse('https://geo-bd-apis.onrender.com/api/divisions', response.data)
     } catch (error) {
       toast.error('Failed to load divisions')
     } finally {
@@ -72,7 +72,7 @@ const APIExplorer = () => {
       setLoading(true)
       const response = await geoAPI.getDistricts(divisionId)
       setDistricts(response.data.data)
-      updateAPIResponse(`https://geobd.vercel.com/api/districts?division_id=${divisionId}`, response.data)
+      updateAPIResponse(`https://geo-bd-apis.onrender.com/api/districts?division_id=${divisionId}`, response.data)
     } catch (error) {
       toast.error('Failed to load districts')
     } finally {
@@ -85,7 +85,7 @@ const APIExplorer = () => {
       setLoading(true)
       const response = await geoAPI.getUpazilas(districtId)
       setUpazilas(response.data.data)
-      updateAPIResponse(`https://geobd.vercel.com/api/upazilas?district_id=${districtId}`, response.data)
+      updateAPIResponse(`https://geo-bd-apis.onrender.com/api/upazilas?district_id=${districtId}`, response.data)
     } catch (error) {
       toast.error('Failed to load upazilas')
     } finally {
@@ -99,7 +99,7 @@ const APIExplorer = () => {
       const response = await fetch(`/api/unions?upazila_id=${upazilaId}`)
       const data = await response.json()
       setUnions(data.data)
-      updateAPIResponse(`https://geobd.vercel.com/api/unions?upazila_id=${upazilaId}`, data)
+      updateAPIResponse(`https://geo-bd-apis.onrender.com/api/unions?upazila_id=${upazilaId}`, data)
     } catch (error) {
       toast.error('Failed to load unions')
     } finally {
@@ -112,7 +112,7 @@ const APIExplorer = () => {
       setLoading(true)
       const response = await fetch(`/api/unions/${unionId}`)
       const data = await response.json()
-      updateAPIResponse(`https://geobd.vercel.com/api/unions/${unionId}`, data)
+      updateAPIResponse(`https://geo-bd-apis.onrender.com/api/unions/${unionId}`, data)
     } catch (error) {
       toast.error('Failed to load union details')
     } finally {
@@ -137,7 +137,7 @@ const APIExplorer = () => {
   }
 
   const getActiveEndpoint = () => {
-    const baseUrl = 'https://geobd.vercel.com'
+    const baseUrl = 'https://geo-bd-apis.onrender.com'
     if (selectedUnion) return `${baseUrl}/api/unions/${selectedUnion}`
     if (selectedUpazila) return `${baseUrl}/api/unions?upazila_id=${selectedUpazila}`
     if (selectedDistrict) return `${baseUrl}/api/upazilas?district_id=${selectedDistrict}`
