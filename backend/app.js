@@ -16,7 +16,11 @@ const app = express();
 app.use(helmet());
 app.use(compression());
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+  origin: [
+    'http://localhost:3000',
+    'https://geo-bd-apis.vercel.app',
+    'https://geo-bd-apis.onrender.com'
+  ],
   credentials: true
 }));
 

@@ -352,23 +352,23 @@ const APIDocs = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[var(--bg)]">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex items-center justify-between">
+      <div className="bg-[var(--bg-secondary)] border-b border-[var(--border)]">
+        <div className="max-w-7xl mx-auto container-padding py-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">API Documentation</h1>
-              <p className="text-gray-600">Complete guide for the GeoBD API endpoints</p>
+              <h1 className="text-3xl font-bold text-[var(--text)] mb-2">API Documentation</h1>
+              <p className="text-[var(--text-muted)]">Complete guide for the GeoBD API endpoints</p>
             </div>
-            <Link to="/" className="btn-secondary">
+            <Link to="/" className="btn-secondary self-start sm:self-auto">
               Back to Home
             </Link>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto container-padding py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Sidebar */}
           <div className="lg:col-span-1">
@@ -377,13 +377,13 @@ const APIDocs = () => {
                 <button
                   key={key}
                   onClick={() => setActiveEndpoint(key)}
-                  className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                  className={`w-full text-left px-4 py-3 rounded-xl transition-all ${
                     activeEndpoint === key
-                      ? 'bg-[#006A4E] text-white'
-                      : 'bg-white text-gray-700 hover:bg-gray-50'
+                      ? 'bg-primary text-white shadow-lg shadow-primary/30'
+                      : 'bg-[var(--bg-secondary)] text-[var(--text)] hover:bg-[var(--bg-tertiary)]'
                   }`}
                 >
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center gap-3">
                     <span className="text-xl">{section.icon}</span>
                     <span className="font-medium">{section.title}</span>
                   </div>
@@ -400,10 +400,10 @@ const APIDocs = () => {
                 className={activeEndpoint === key ? 'block' : 'hidden'}
               >
                 <div className="mb-8">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                  <h2 className="text-2xl font-bold text-[var(--text)] mb-2">
                     {section.icon} {section.title}
                   </h2>
-                  <p className="text-gray-600">
+                  <p className="text-[var(--text-muted)]">
                     API endpoints for {section.title.toLowerCase()} of Bangladesh
                   </p>
                 </div>
@@ -415,48 +415,48 @@ const APIDocs = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
-                      className="bg-white rounded-xl border border-gray-200 overflow-hidden"
+                      className="card overflow-hidden"
                     >
                       {/* Header */}
-                      <div className="px-6 py-4 border-b border-gray-200">
+                      <div className="px-6 py-4 border-b border-[var(--border)]">
                         <div className="flex items-center justify-between">
-                          <div className="flex items-center space-x-3">
-                            <span className="px-3 py-1 bg-[#006A4E] text-white text-sm font-semibold rounded">
+                          <div className="flex items-center gap-3">
+                            <span className="px-3 py-1 bg-primary text-white text-sm font-semibold rounded-lg">
                               {endpoint.method}
                             </span>
-                            <code className="text-lg font-mono text-gray-900">
+                            <code className="text-lg font-mono text-[var(--text)]">
                               {endpoint.path}
                             </code>
                           </div>
                           <button
                             onClick={() => copyToClipboard(endpoint.example, `${key}-${index}`)}
-                            className="text-gray-500 hover:text-[#006A4E] transition-colors"
+                            className="p-2 rounded-lg text-[var(--text-muted)] hover:text-primary hover:bg-[var(--bg-secondary)] transition-all"
                           >
                             {copiedId === `${key}-${index}` ? (
-                              <Check className="w-5 h-5 text-green-500" />
+                              <Check className="w-5 h-5 text-primary" />
                             ) : (
                               <Copy className="w-5 h-5" />
                             )}
                           </button>
                         </div>
-                        <p className="mt-2 text-gray-600">{endpoint.description}</p>
+                        <p className="mt-2 text-[var(--text-muted)]">{endpoint.description}</p>
                       </div>
 
                       {/* Example */}
                       <div className="px-6 py-4">
-                        <h4 className="font-semibold text-gray-900 mb-2">Example</h4>
-                        <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-                          <pre className="text-sm text-gray-300 font-mono">
+                        <h4 className="font-semibold text-[var(--text)] mb-2">Example</h4>
+                        <div className="bg-[var(--bg-secondary)] border border-[var(--border)] rounded-lg p-4 overflow-x-auto">
+                          <pre className="text-sm text-[var(--text-secondary)] font-mono">
                             <code>{endpoint.example}</code>
                           </pre>
                         </div>
                       </div>
 
                       {/* Response */}
-                      <div className="px-6 py-4 bg-gray-50">
-                        <h4 className="font-semibold text-gray-900 mb-2">Response</h4>
-                        <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-                          <pre className="text-xs text-gray-300 font-mono">
+                      <div className="px-6 py-4 bg-[var(--bg-secondary)]">
+                        <h4 className="font-semibold text-[var(--text)] mb-2">Response</h4>
+                        <div className="bg-[var(--bg-tertiary)] border border-[var(--border)] rounded-lg p-4 overflow-x-auto">
+                          <pre className="text-xs text-[var(--text-secondary)] font-mono">
                             <code>{endpoint.response}</code>
                           </pre>
                         </div>

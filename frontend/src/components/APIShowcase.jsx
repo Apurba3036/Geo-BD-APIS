@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Copy, Check } from 'lucide-react'
+import { Copy, Check, Terminal, ArrowRight } from 'lucide-react'
 import toast from 'react-hot-toast'
+import { Link } from 'react-router-dom'
 
 const APIShowcase = () => {
   const [copiedId, setCopiedId] = useState(null)
@@ -75,7 +76,7 @@ const APIShowcase = () => {
   }
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg)]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -84,12 +85,19 @@ const APIShowcase = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--bg-secondary)] border border-[var(--border)] rounded-full mb-6">
+            <Terminal className="w-4 h-4 text-primary" />
+            <span className="text-sm text-[var(--text-secondary)]">RESTful API</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text)] mb-4">
             Simple & Clean API
           </h2>
-          <div className="w-16 h-1 bd-green-bg mx-auto rounded mb-4"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            RESTful endpoints with consistent JSON responses. Always returns official government links.
+          <div className="w-16 h-1 bg-gradient-to-r from-primary to-primary-light mx-auto rounded-full mb-4"></div>
+          <p className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto">
+            RESTful endpoints with consistent JSON responses. Always returns official government links. 
+            <span className="block mt-2">
+              📁 Source: <a href="https://github.com/Apurba3036/Geo-BD-APIS" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-light underline">Geo-BD-APIS</a>
+            </span>
           </p>
         </motion.div>
 
@@ -101,21 +109,21 @@ const APIShowcase = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="card p-6"
+              className="card p-6 group"
             >
               {/* Header */}
               <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-2">
-                  <span className="px-2 py-1 bg-[#006A4E] text-white text-xs font-semibold rounded">
+                <div className="flex items-center gap-2">
+                  <span className="px-2 py-1 bg-primary text-white text-xs font-semibold rounded-lg">
                     {api.method}
                   </span>
                 </div>
                 <button
                   onClick={() => copyToClipboard(api.endpoint, index)}
-                  className="text-gray-500 hover:text-[#006A4E] transition-colors"
+                  className="p-2 rounded-lg text-[var(--text-muted)] hover:text-primary hover:bg-[var(--bg-secondary)] transition-all"
                 >
                   {copiedId === index ? (
-                    <Check className="w-4 h-4 text-green-500" />
+                    <Check className="w-4 h-4 text-primary" />
                   ) : (
                     <Copy className="w-4 h-4" />
                   )}
@@ -124,17 +132,17 @@ const APIShowcase = () => {
 
               {/* Endpoint */}
               <div className="mb-4">
-                <code className="text-sm text-gray-800 font-mono bg-gray-50 px-3 py-2 rounded-lg block">
+                <code className="text-sm text-[var(--text)] font-mono bg-[var(--bg-secondary)] px-3 py-2 rounded-lg block border border-[var(--border)]">
                   {api.endpoint}
                 </code>
               </div>
 
               {/* Description */}
-              <p className="text-sm text-gray-600 mb-4">{api.description}</p>
+              <p className="text-sm text-[var(--text-muted)] mb-4">{api.description}</p>
 
               {/* Response Preview */}
-              <div className="bg-gray-900 rounded-lg p-3 overflow-x-auto">
-                <pre className="text-xs text-gray-300 font-mono">
+              <div className="bg-[var(--bg-secondary)] rounded-lg p-3 overflow-x-auto border border-[var(--border)]">
+                <pre className="text-xs text-[var(--text-secondary)] font-mono">
                   <code>{api.response}</code>
                 </pre>
               </div>
@@ -150,12 +158,13 @@ const APIShowcase = () => {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <a
-            href="/docs"
-            className="btn-primary text-lg px-8 py-3 inline-flex items-center space-x-2"
+          <Link
+            to="/docs"
+            className="group btn-primary text-lg px-8 py-4 inline-flex items-center gap-2"
           >
             <span>View Full Documentation</span>
-          </a>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </motion.div>
       </div>
     </section>

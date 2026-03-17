@@ -423,7 +423,7 @@ const InteractiveMap = () => {
   }, [selectedDistrict, mapInitialized])
 
   return (
-    <section id="map" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section id="map" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -432,10 +432,10 @@ const InteractiveMap = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text)] mb-4">
             Bangladesh Map
           </h2>
-          <div className="w-16 h-1 bd-green-bg mx-auto rounded mb-4"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-primary to-primary-light mx-auto rounded-full mb-4"></div>
         </motion.div>
 
         <MapDocumentation />
@@ -451,7 +451,7 @@ const InteractiveMap = () => {
           >
             {/* Division Dropdown */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
                 Division
               </label>
               <div className="relative">
@@ -461,20 +461,20 @@ const InteractiveMap = () => {
                   className="input-field appearance-none pr-10"
                   disabled={loading}
                 >
-                  <option value="">Select Division</option>
+                  <option value="" className="bg-[var(--bg-secondary)]">Select Division</option>
                   {divisions.map((division) => (
-                    <option key={division.id} value={division.id}>
+                    <option key={division.id} value={division.id} className="bg-[var(--bg-secondary)]">
                       {division.name}
                     </option>
                   ))}
                 </select>
-                <ChevronDown className="absolute right-3 top-3 w-4 h-4 text-gray-500 pointer-events-none" />
+                <ChevronDown className="absolute right-3 top-3.5 w-5 h-5 text-[var(--text-muted)] pointer-events-none" />
               </div>
             </div>
 
             {/* District Dropdown */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
                 District
               </label>
               <div className="relative">
@@ -484,14 +484,14 @@ const InteractiveMap = () => {
                   className="input-field appearance-none pr-10"
                   disabled={!selectedDivision || loading}
                 >
-                  <option value="">Select District</option>
+                  <option value="" className="bg-[var(--bg-secondary)]">Select District</option>
                   {districts.map((district) => (
-                    <option key={district.id} value={district.id}>
+                    <option key={district.id} value={district.id} className="bg-[var(--bg-secondary)]">
                       {district.name}
                     </option>
                   ))}
                 </select>
-                <ChevronDown className="absolute right-3 top-3 w-4 h-4 text-gray-500 pointer-events-none" />
+                <ChevronDown className="absolute right-3 top-3.5 w-5 h-5 text-[var(--text-muted)] pointer-events-none" />
               </div>
             </div>
 
@@ -502,8 +502,8 @@ const InteractiveMap = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="card p-4"
               >
-                <h3 className="font-semibold text-gray-900 mb-2">Selected Location</h3>
-                <div className="space-y-1 text-sm text-gray-600">
+                <h3 className="font-semibold text-[var(--text)] mb-2">Selected Location</h3>
+                <div className="space-y-1 text-sm text-[var(--text-muted)]">
                   {selectedDivision && (
                     <div>Division: {divisions.find(d => d.id === selectedDivision)?.name}</div>
                   )}
@@ -515,10 +515,10 @@ const InteractiveMap = () => {
             )}
 
             {/* Map Status */}
-            <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-              <div className="flex items-center space-x-2">
-                <div className={`w-2 h-2 rounded-full ${mapInitialized ? 'bg-green-500' : 'bg-yellow-500 animate-pulse'}`}></div>
-                <span className="text-sm text-green-700">
+            <div className="card bg-primary/5 border border-primary/20 rounded-lg p-3">
+              <div className="flex items-center gap-2">
+                <div className={`w-2 h-2 rounded-full ${mapInitialized ? 'bg-primary' : 'bg-accent animate-pulse'}`}></div>
+                <span className="text-sm text-[var(--text-secondary)]">
                   {mapInitialized ? 'Map Active' : 'Loading Map...'}
                 </span>
               </div>
@@ -540,10 +540,10 @@ const InteractiveMap = () => {
                 style={{ minHeight: '500px' }}
               />
               {!mapInitialized && (
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-100 z-10">
+                <div className="absolute inset-0 flex items-center justify-center bg-[var(--bg-secondary)] z-10">
                   <div className="text-center">
-                    <Loader className="w-8 h-8 bd-green mx-auto mb-4 animate-spin" />
-                    <p className="text-gray-600">Loading interactive map...</p>
+                    <Loader className="w-8 h-8 text-primary mx-auto mb-4 animate-spin" />
+                    <p className="text-[var(--text-muted)]">Loading interactive map...</p>
                   </div>
                 </div>
               )}

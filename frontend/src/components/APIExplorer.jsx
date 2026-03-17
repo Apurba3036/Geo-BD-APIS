@@ -146,7 +146,7 @@ const APIExplorer = () => {
   }
 
   return (
-    <section id="api-explorer" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="api-explorer" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg)]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -155,12 +155,16 @@ const APIExplorer = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Live API Explorer
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--bg-secondary)] border border-[var(--border)] rounded-full mb-6">
+            <Code className="w-4 h-4 text-primary" />
+            <span className="text-sm text-[var(--text-secondary)]">Live API Testing</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text)] mb-4">
+            API Explorer
           </h2>
-          <div className="w-16 h-1 bd-green-bg mx-auto rounded mb-4"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Test our API endpoints in real-time. Select locations to see live data and endpoint URLs.
+          <div className="w-16 h-1 bg-gradient-to-r from-primary to-primary-light mx-auto rounded-full mb-4"></div>
+          <p className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto">
+            Test API endpoints in real-time. Select locations to see dynamic endpoint URLs and responses.
           </p>
         </motion.div>
 
@@ -192,7 +196,7 @@ const APIExplorer = () => {
                     </option>
                   ))}
                 </select>
-                <ChevronDown className="absolute right-3 top-3 w-4 h-4 text-gray-500 pointer-events-none" />
+                <ChevronDown className="absolute right-3 top-3.5 w-5 h-5 text-[var(--text-muted)] pointer-events-none" />
               </div>
             </div>
 
@@ -215,7 +219,7 @@ const APIExplorer = () => {
                     </option>
                   ))}
                 </select>
-                <ChevronDown className="absolute right-3 top-3 w-4 h-4 text-gray-500 pointer-events-none" />
+                <ChevronDown className="absolute right-3 top-3.5 w-5 h-5 text-[var(--text-muted)] pointer-events-none" />
               </div>
             </div>
 
@@ -238,7 +242,7 @@ const APIExplorer = () => {
                     </option>
                   ))}
                 </select>
-                <ChevronDown className="absolute right-3 top-3 w-4 h-4 text-gray-500 pointer-events-none" />
+                <ChevronDown className="absolute right-3 top-3.5 w-5 h-5 text-[var(--text-muted)] pointer-events-none" />
               </div>
             </div>
 
@@ -266,7 +270,7 @@ const APIExplorer = () => {
                     </option>
                   ))}
                 </select>
-                <ChevronDown className="absolute right-3 top-3 w-4 h-4 text-gray-500 pointer-events-none" />
+                <ChevronDown className="absolute right-3 top-3.5 w-5 h-5 text-[var(--text-muted)] pointer-events-none" />
               </div>
             </div>
 
@@ -277,8 +281,8 @@ const APIExplorer = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="card p-4"
               >
-                <h3 className="font-semibold text-gray-900 mb-2">Selected Location</h3>
-                <div className="space-y-1 text-sm text-gray-600">
+                <h3 className="font-semibold text-[var(--text)] mb-2">Selected Location</h3>
+                <div className="space-y-1 text-sm text-[var(--text-muted)]">
                   {selectedDivision && (
                     <div>Division: {divisions.find(d => d.id === selectedDivision)?.name}</div>
                   )}
@@ -297,7 +301,7 @@ const APIExplorer = () => {
 
             {/* Loading Status */}
             {loading && (
-              <div className="flex items-center space-x-2 text-blue-600">
+              <div className="flex items-center gap-2 text-primary">
                 <Loader className="w-4 h-4 animate-spin" />
                 <span className="text-sm">Loading data...</span>
               </div>
@@ -313,51 +317,72 @@ const APIExplorer = () => {
             className="space-y-4"
           >
             {/* Current Endpoint */}
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-gray-900 flex items-center space-x-2">
-                  <Code className="w-4 h-4" />
+            <div className="card p-4">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="font-semibold text-[var(--text)] flex items-center gap-2">
+                  <Code className="w-4 h-4 text-primary" />
                   <span>Current Endpoint</span>
                 </h3>
                 <button
                   onClick={() => copyToClipboard(getActiveEndpoint())}
-                  className="flex items-center space-x-1 text-sm text-blue-600 hover:text-blue-700 transition-colors"
+                  className="flex items-center gap-1 text-sm text-primary hover:text-primary-light transition-colors"
                 >
                   {copied ? <CheckCircle className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                   <span>{copied ? 'Copied!' : 'Copy'}</span>
                 </button>
               </div>
-              <div className="bg-gray-900 text-green-400 p-3 rounded font-mono text-sm">
+              <div className="bg-[var(--bg-secondary)] border border-[var(--border)] text-primary p-3 rounded-lg font-mono text-sm overflow-x-auto">
                 GET {getActiveEndpoint()}
               </div>
             </div>
 
             {/* API Response */}
             {apiResponse && (
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-semibold text-gray-900">API Response</h3>
-                  <span className="text-xs text-gray-500">{apiResponse.timestamp}</span>
+              <div className="card p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="font-semibold text-[var(--text)]">API Response</h3>
+                  <span className="text-xs text-[var(--text-muted)]">{apiResponse.timestamp}</span>
                 </div>
-                <div className="bg-gray-900 text-gray-100 p-3 rounded text-xs font-mono overflow-x-auto max-h-96 overflow-y-auto">
+                <div className="bg-[var(--bg-secondary)] border border-[var(--border)] text-[var(--text-secondary)] p-3 rounded-lg text-xs font-mono overflow-x-auto max-h-96 overflow-y-auto">
                   <pre>{JSON.stringify(apiResponse.data, null, 2)}</pre>
                 </div>
-                <div className="mt-2 text-xs text-gray-500">
-                  Status: {apiResponse.data?.success ? 'Success' : 'Error'} | 
-                  Count: {apiResponse.data?.data?.length || 0} items
+                <div className="mt-3 text-xs text-[var(--text-muted)]">
+                  Status: {apiResponse.data?.success ? 
+                    <span className="text-emerald-500 font-medium">Success</span> : 
+                    <span className="text-red-500 font-medium">Error</span>
+                  } | 
+                  Count: <span className="font-medium">{apiResponse.data?.data?.length || 0}</span> items
                 </div>
               </div>
             )}
 
             {/* Usage Instructions */}
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <h3 className="font-semibold text-blue-900 mb-2">How to Use</h3>
-              <ul className="text-sm text-blue-800 space-y-1">
-                <li>• Select a division to see districts</li>
-                <li>• Select a district to see upazilas</li>
-                <li>• Select an upazila to see unions</li>
-                <li>• Select a union for detailed information</li>
-                <li>• Copy the endpoint URL for your application</li>
+            <div className="card bg-primary/5 border border-primary/20 p-4">
+              <h3 className="font-semibold text-[var(--text)] mb-3 flex items-center gap-2">
+                <span className="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-xs">?</span>
+                How to Use
+              </h3>
+              <ul className="text-sm text-[var(--text-secondary)] space-y-2">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-0.5">•</span>
+                  <span>Select a division to see districts</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-0.5">•</span>
+                  <span>Select a district to see upazilas</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-0.5">•</span>
+                  <span>Select an upazila to see unions</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-0.5">•</span>
+                  <span>Select a union for detailed information</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-0.5">•</span>
+                  <span>Copy the endpoint URL for your application</span>
+                </li>
               </ul>
             </div>
           </motion.div>
