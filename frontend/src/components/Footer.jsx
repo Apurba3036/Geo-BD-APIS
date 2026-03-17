@@ -99,9 +99,7 @@ const Footer = () => {
             <Heart className="w-4 h-4 text-accent fill-accent" />
             <span>for Bangladesh 🇧🇩</span>
           </p>
-          <p className="text-[var(--text-muted)] text-xs">
-            © 2024 GeoBD API. All rights reserved.
-          </p>
+         
         </motion.div>
       </div>
     </footer>
