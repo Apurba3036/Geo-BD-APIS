@@ -1,15 +1,17 @@
 # GeoBD API Backend 🇧🇩
 
-Bangladesh Geo API Platform Backend - Clean, fast, developer-first API for Bangladesh geographical data.
+Bangladesh Geo API Platform Backend - Clean, fast, developer-first API for Bangladesh geographical data using JSON files.
 
 ## 🚀 Features
 
-- **RESTful API** for divisions, districts, and upazilas
-- **MongoDB** with Mongoose ODM
+- **RESTful API** for divisions, districts, upazilas, and unions
+- **JSON-based Data** using files from [SudipMHX/bd-apis](https://github.com/SudipMHX/bd-apis.git)
 - **Fast responses** with compression and rate limiting
 - **Developer-friendly** error handling
 - **Security** with Helmet.js
-- **Search functionality** for districts and upazilas
+- **Search functionality** for all administrative levels
+- **No Database Required** - Uses JSON files with caching
+- **Complete Coverage** - 8 divisions, 64 districts, 495+ upazilas, 4,500+ unions
 
 ## 📡 API Endpoints
 
@@ -36,6 +38,31 @@ GET /api/upazilas/search?q=Debidwar   # Search upazilas
 GET /api/upazilas/:id                 # Get upazila by ID
 ```
 
+### Unions
+```
+GET /api/unions                       # Get all unions
+GET /api/unions?upazila_id=:id        # Get unions by upazila
+GET /api/unions/:id                   # Get union by ID
+GET /api/unions/search?q=:query       # Search unions
+```
+
+## 📊 Data Source
+
+**JSON Data Collected From:** [https://github.com/SudipMHX/bd-apis.git](https://github.com/SudipMHX/bd-apis.git)
+
+### Data Files Used:
+- `divisions.json` - 8 divisions of Bangladesh
+- `districts.json` - 64 districts with coordinates
+- `upazilas.json` - 495+ upazilas with district relationships
+- `unions.json` - 4,500+ unions with upazila relationships
+
+### Data Features:
+- **Complete Coverage** - All administrative levels
+- **Bengali Names** - Native language support
+- **Coordinates** - Latitude and longitude for mapping
+- **Official URLs** - Government website links
+- **Hierarchical Structure** - Parent-child relationships
+
 ## 🛠️ Setup
 
 1. **Install dependencies**
@@ -43,24 +70,19 @@ GET /api/upazilas/:id                 # Get upazila by ID
 npm install
 ```
 
-2. **Set up environment variables**
+2. **Set up environment variables** (optional)
 ```bash
 cp .env.example .env
-# Edit .env with your MongoDB URI
+# Edit .env if needed (has default values)
 ```
 
-3. **Start MongoDB** (make sure it's running)
-
-4. **Seed the database**
-```bash
-npm run seed
-```
-
-5. **Start the server**
+3. **Start the server**
 ```bash
 npm run dev     # Development with nodemon
 npm start      # Production
 ```
+
+**No database setup required!** The API uses JSON files with built-in caching.
 
 ## 📊 Example Response
 
@@ -84,10 +106,65 @@ npm start      # Production
 ```env
 PORT=5000
 NODE_ENV=development
-MONGODB_URI=mongodb://localhost:27017/geobd-api
 CORS_ORIGIN=http://localhost:3000
+# MongoDB is NOT required - using JSON files
+```
+
+## 📁 Project Structure
+
+```
+backend/
+├── controllers/
+│   └── fallbackController.js    # JSON file controller
+├── routes/
+│   ├── divisions.js
+│   ├── districts.js
+│   ├── upazilas.js
+│   └── unions.js
+├── data/
+│   ├── divisions.json
+│   ├── districts.json
+│   ├── upazilas.json
+│   └── unions.json
+├── app.js                       # Express app
+└── package.json
+```
+
+## ⚡ Performance
+
+- **Fast Loading** - JSON files cached in memory
+- **No Database Latency** - Direct file access
+- **Compression** - Gzip for API responses
+- **Rate Limiting** - 100 requests per 15 minutes
+- **Security Headers** - Helmet.js protection
+
+## 🔄 Data Updates
+
+To update the data from the source repository:
+
+1. **Download latest data**
+```bash
+# Clone or pull from source
+git clone https://github.com/SudipMHX/bd-apis.git temp-data
+```
+
+2. **Replace JSON files**
+```bash
+cp temp-data/divisions.json .
+cp temp-data/districts.json .
+cp temp-data/upazilas.json .
+cp temp-data/unions.json .
+```
+
+3. **Restart server**
+```bash
+npm restart
 ```
 
 ## 📝 License
 
 MIT License - Free forever 🇧🇩
+
+## 🙏 Data Credits
+
+**Special thanks to [SudipMHX/bd-apis](https://github.com/SudipMHX/bd-apis.git)** for providing the comprehensive Bangladesh geographical data in JSON format.
