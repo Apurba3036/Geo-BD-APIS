@@ -31,10 +31,10 @@ const InteractiveMap = () => {
       'raster-tiles': {
         type: 'raster',
         tiles: [
-          'https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}@2x.png'
+          'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
         ],
         tileSize: 256,
-        attribution: '&copy; OSM &copy; CARTO'
+        attribution: '&copy; OpenStreetMap contributors'
       }
     },
     layers: [{
@@ -252,83 +252,91 @@ const InteractiveMap = () => {
   const initializeMap = () => {
     if (!mapContainer.current || map.current) return
 
-    const m = new maplibregl.Map({
-      container: mapContainer.current,
-      style: getMapStyle(),
-      center: [90.4125, 23.8103], // Bangladesh center
-      zoom: 6.5,
-      antialias: true
-    })
+    try {
+      const m = new maplibregl.Map({
+        container: mapContainer.current,
+        style: getMapStyle(),
+        center: [90.4125, 23.8103], // Bangladesh center
+        zoom: 6.5,
+        antialias: true,
+        attributionControl: false
+      })
 
-    m.on('load', () => {
-      map.current = m
-      m.resize()
-      
-      // Add Bangladesh boundary first
-      if (!m.getSource('bangladesh')) {
-        m.addSource('bangladesh', {
-          type: 'geojson',
-          data: {
-            type: 'Feature',
-            geometry: {
-              type: 'Polygon',
-              coordinates: [[
-                [88.0, 26.5], // Northwest
-                [92.5, 26.5], // Northeast
-                [92.5, 21.0], // Southeast
-                [88.0, 21.0], // Southwest
-                [88.0, 26.5]  // Close polygon
-              ]]
+      // Add attribution control manually
+      m.addControl(new maplibregl.AttributionControl({
+        compact: true
+      }))
+
+      m.on('load', () => {
+        map.current = m
+        m.resize()
+        
+        // Add Bangladesh boundary first
+        if (!m.getSource('bangladesh')) {
+          m.addSource('bangladesh', {
+            type: 'geojson',
+            data: {
+              type: 'Feature',
+              geometry: {
+                type: 'Polygon',
+                coordinates: [[
+                  [88.0, 26.5], // Northwest
+                  [92.5, 26.5], // Northeast
+                  [92.5, 21.0], // Southeast
+                  [88.0, 21.0], // Southwest
+                  [88.0, 26.5]  // Close polygon
+                ]]
+              }
             }
-          }
-        })
-      }
+          })
+        }
 
-      if (!m.getLayer('bangladesh-fill')) {
-        m.addLayer({
-          id: 'bangladesh-fill',
-          type: 'fill',
-          source: 'bangladesh',
-          paint: {
-            'fill-color': '#006A4E',
-            'fill-opacity': 0.1
-          }
-        })
-      }
+        if (!m.getLayer('bangladesh-fill')) {
+          m.addLayer({
+            id: 'bangladesh-fill',
+            type: 'fill',
+            source: 'bangladesh',
+            paint: {
+              'fill-color': '#006A4E',
+              'fill-opacity': 0.1
+            }
+          })
+        }
 
-      if (!m.getLayer('bangladesh-outline')) {
-        m.addLayer({
-          id: 'bangladesh-outline',
-          type: 'line',
-          source: 'bangladesh',
-          paint: {
-            'line-color': '#006A4E',
-            'line-width': 2,
-            'line-opacity': 0.8
-          }
-        })
-      }
-      
-      // Add district markers and labels if districts are loaded
-      if (allDistricts.length > 0) {
-        addDistrictMarkersAndLabels(m)
-      }
-      
-      // Fit to Bangladesh bounds
-      m.fitBounds(bangladeshBounds, { padding: 50, duration: 1500 })
-      
-      setMapInitialized(true)
-    })
+        if (!m.getLayer('bangladesh-border')) {
+          m.addLayer({
+            id: 'bangladesh-border',
+            type: 'line',
+            source: 'bangladesh',
+            paint: {
+              'line-color': '#006A4E',
+              'line-width': 2,
+              'line-opacity': 0.5
+            }
+          })
+        }
 
-    // Add navigation controls
-    m.addControl(new maplibregl.NavigationControl(), 'top-right')
-    m.addControl(new maplibregl.ScaleControl(), 'bottom-left')
+        m.fitBounds(bangladeshBounds, { padding: 50, duration: 1500 })
+        setMapInitialized(true)
+      })
 
-    // Handle map interactions
-    m.on('click', (e) => {
-      const coords = e.lngLat
-      showLocationPopup(coords, 'Bangladesh', 'Click on a location from the dropdown to see details')
-    })
+      m.on('error', (e) => {
+        console.error('MapLibre error:', e)
+      })
+
+      // Add navigation controls
+      m.addControl(new maplibregl.NavigationControl(), 'top-right')
+      m.addControl(new maplibregl.ScaleControl(), 'bottom-left')
+
+      // Handle map interactions
+      m.on('click', (e) => {
+        const coords = e.lngLat
+        showLocationPopup(coords, 'Bangladesh', 'Click on a location from the dropdown to see details')
+      })
+
+    } catch (error) {
+      console.error('Failed to initialize map:', error)
+    }
   }
 
   const showLocationPopup = (coords, name, description) => {
