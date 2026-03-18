@@ -419,6 +419,54 @@ const APIDocs = () => {
 }`
         }
       ]
+    },
+    worldbank: {
+      title: 'World Bank Data',
+      icon: '📊',
+      endpoints: [
+        {
+          method: 'GET',
+          path: '/api/worldbank',
+          description: 'Get all World Bank development indicators for Bangladesh',
+          example: `curl https://geo-bd-apis.onrender.com/api/worldbank`,
+          response: `[
+  {
+    "indicator": "Population, total",
+    "code": "SP.POP.TOTL",
+    "data": {
+      "1990": 111633717,
+      "2000": 134544304,
+      "2016": 160811932,
+      ...
+      "2024": 173562364
+    }
+  }
+]`
+        },
+        {
+          method: 'GET',
+          path: '/api/worldbank/:code',
+          description: 'Get specific development indicator by code (e.g., SP.POP.TOTL)',
+          example: `curl https://geo-bd-apis.onrender.com/api/worldbank/SP.POP.TOTL`,
+          response: `{
+  "indicator": "Population, total",
+  "code": "SP.POP.TOTL",
+  "data": {
+    "1990": 111633717,
+    "2000": 134544304,
+    "2016": 160811932,
+    "2017": 162186147,
+    "2018": 163523103,
+    "2019": 164913055,
+    "2020": 166298024,
+    "2021": 167658854,
+    "2022": 169384897,
+    "2023": 171466990,
+    "2024": 173562364
+  }
+}`
+        }
+      ]
     }
   }
 

@@ -23,6 +23,18 @@ export const geoAPI = {
   getUpazilas: (districtId) => api.get('/upazilas', { params: { district_id: districtId } }),
   getUpazila: (id) => api.get(`/upazilas/${id}`),
   searchUpazilas: (query) => api.get('/upazilas/search', { params: { q: query } }),
+
+  // Unions
+  getUnions: (upazilaId) => api.get('/unions', { params: { upazila_id: upazilaId } }),
+  getUnion: (id) => api.get(`/unions/${id}`),
+
+  // GI Products
+  getGIProducts: () => api.get('/giproducts'),
+  getGIProduct: (id) => api.get(`/giproducts/${id}`),
+
+  // World Bank Data
+  getWorldBankIndicators: () => api.get('/worldbank'),
+  getWorldBankIndicator: (code) => api.get(`/worldbank/${code}`),
 }
 
 export default api

@@ -10,6 +10,7 @@ const districtRoutes = require('./routes/districts');
 const upazilaRoutes = require('./routes/upazilas');
 const unionRoutes = require('./routes/unions');
 const giProductRoutes = require('./routes/giproducts');
+const worldbankRoutes = require('./routes/worldbank');
 
 const app = express();
 
@@ -43,6 +44,7 @@ app.use('/api/districts', districtRoutes);
 app.use('/api/upazilas', upazilaRoutes);
 app.use('/api/unions', unionRoutes);
 app.use('/api/giproducts', giProductRoutes);
+app.use('/api/worldbank', worldbankRoutes);
 
 // Health check
 app.get('/health', (req, res) => {

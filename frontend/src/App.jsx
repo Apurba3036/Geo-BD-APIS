@@ -8,7 +8,9 @@ import Stats from './components/Stats'
 import Footer from './components/Footer'
 import APIDocs from './pages/APIDocs'
 import GIProductsSection from './components/GIProductsSection'
+import WorldBankSection from './components/WorldBankSection'
 import GIProductsPage from './pages/GIProductsPage'
+import WorldBankPage from './pages/WorldBankPage'
 import { motion } from 'framer-motion'
 
 function App() {
@@ -23,11 +25,13 @@ function App() {
             <Stats />
             <APIShowcase />
             <GIProductsSection />
+            <WorldBankSection />
             <InteractiveMap />
             <APIExplorer />
           </main>
         } />
         <Route path="/gi-products" element={<GIProductsPage />} />
+        <Route path="/world-bank" element={<WorldBankPage />} />
         <Route path="/docs" element={<APIDocs />} />
       </Routes>
       

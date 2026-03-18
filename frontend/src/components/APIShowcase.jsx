@@ -78,6 +78,40 @@ const APIShowcase = () => {
   ],
   "count": 33
 }`
+    },
+    {
+      method: 'GET',
+      endpoint: '/api/unions?upazila_id=85',
+      description: 'Get all unions in Pabna Sadar upazila',
+      response: `{
+  "success": true,
+  "data": [
+    {
+      "id": "1",
+      "upazila_id": "85",
+      "name": "Dogachi",
+      "bn_name": "দোগাছি",
+      "url": "dogachiupl.pabna.gov.bd"
+    }
+  ],
+  "count": 10
+}`
+    },
+    {
+      method: 'GET',
+      endpoint: '/api/worldbank',
+      description: 'Get World Bank development indicators for Bangladesh (all years)',
+      response: `[
+  {
+    "indicator": "Population, total",
+    "code": "SP.POP.TOTL",
+    "data": {
+      "1990": 111633717,
+      "2000": 134544304,
+      "2024": 173562364
+    }
+  }
+]`
     }
   ]
 
