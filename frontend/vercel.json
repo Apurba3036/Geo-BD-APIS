@@ -1,0 +1,28 @@
+{
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!api|sitemap\\.xml|robots\\.txt|googlee7e50be684374616\\.html|bdicon\\.png|image\\.png).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
