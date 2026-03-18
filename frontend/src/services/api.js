@@ -35,6 +35,10 @@ export const geoAPI = {
   // World Bank Data
   getWorldBankIndicators: () => api.get('/worldbank'),
   getWorldBankIndicator: (code) => api.get(`/worldbank/${code}`),
+
+  // WHO Health Data
+  getWHOIndicators: () => api.get('/who'),
+  getWHOIndicator: (uuid) => api.get(`/who/${uuid}`),
 }
 
 export default api

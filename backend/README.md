@@ -11,7 +11,7 @@ Bangladesh Geo API Platform Backend - Clean, fast, developer-first API for Bangl
 - **Security** with Helmet.js
 - **Search functionality** for all administrative levels and GI Products
 - **No Database Required** - Uses JSON files with caching
-- **Complete Coverage** - 8 divisions, 64 districts, 495+ upazilas, 4500+ unions, and comprehensive Geographical Indications (GI).
+- **Complete Coverage** - 8 divisions, 64 districts, 495+ upazilas, 4500+ unions, 30+ GI Products, 50+ World Bank Indicators, and 35+ WHO Health Indicators.
 
 ## 📡 API Endpoints
 
@@ -51,6 +51,12 @@ GET /api/unions/search?q=:query       # Search unions
 GET /api/giproducts                   # Get all GI products
 GET /api/giproducts/:id               # Get a GI product by application no
 GET /api/giproducts/search?q=:query   # Search GI products by name or origin
+
+### World Bank Indicators
+```bash
+GET /api/worldbank                    # Get all World Bank indicators
+GET /api/worldbank/:code              # Get data for a specific indicator
+```
 ```
 
 ## 📊 Data Source
@@ -63,6 +69,7 @@ GET /api/giproducts/search?q=:query   # Search GI products by name or origin
 - `upazilas.json` - 495+ upazilas with district relationships
 - `unions.json` - 4,500+ unions with upazila relationships
 - `giproduct.json` - Full catalog of certified GI products of Bangladesh
+- `worldbank.json` - Comprehensive WDI data for Bangladesh (1990-2025)
 
 ### Data Features:
 - **Complete Coverage** - All administrative levels

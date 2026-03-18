@@ -24,6 +24,9 @@ GeoBD Platform/
 - **Search functionality** for all administrative levels
 - **Official government links** included
 - **4,500+ Union data** with complete hierarchy
+- **30+ GI Products** certified Geographical Indications
+- **50+ World Bank Indicators** with historical data (1990-2025)
+- **35+ WHO Health Indicators** with comprehensive metrics
 
 ### Frontend (React + Tailwind)
 - **Hero Section** with Bangladesh imagery 🇧🇩
@@ -31,6 +34,10 @@ GeoBD Platform/
 - **Live API Explorer** with real-time endpoint testing
 - **Smart Search** with real-time results
 - **API Documentation** with complete examples
+- **GI Products Catalog** (`/gi-products`)
+- **World Bank Data Page** (`/world-bank`)
+- **WHO Health Data Page** (`/who-data`)
+- **Infinite Stats Marquee** with real-time metrics
 - **Responsive Design** for all devices
 - **Smooth Animations** with Framer Motion
 - **Smooth Scrolling** navigation
@@ -84,6 +91,18 @@ GET /api/unions                       # All 4,500+ unions
 GET /api/unions?upazila_id=:id        # Unions by upazila
 GET /api/unions/:id                   # Specific union details
 GET /api/unions/search?q=:query       # Search unions
+
+### World Bank Indicators
+```bash
+GET /api/worldbank                    # All 50+ indicators
+GET /api/worldbank/:code              # Specific indicator data
+```
+
+### GI Products
+```bash
+GET /api/giproducts                   # All 30+ GI products
+GET /api/giproducts/:id               # Specific GI product
+```
 ```
 
 ## 🛠️ Tech Stack
@@ -141,7 +160,10 @@ npm run dev           # Start development server
 - **8 Divisions** 🏛️
 - **64 Districts** 🏘️  
 - **495+ Upazilas** 📍
-- **4,500+ Unions** 🏘️ (NEW!)
+- **4,500+ Unions** 🏘️
+- **30+ GI Products** ✨
+- **50+ World Bank Indicators** 📈
+- **35+ WHO Health Indicators** 🏥
 - **Official Gov Links** 🔗
 - **Bengali Names** 🇧🇩
 - **Complete Hierarchy** 🌳

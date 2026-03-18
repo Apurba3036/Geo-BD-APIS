@@ -27,7 +27,9 @@ Modern, responsive frontend for the Bangladesh Geo API Platform with interactive
 - **Live API Explorer** with real-time endpoint testing
 - **Complete API Documentation** with all 4 administrative levels + GI Products
 - **Dedicated GI Products Catalog** `/gi-products` with advanced filtering
-- **Stats Section** with animated counters
+- **Dedicated World Bank Indicators** `/world-bank` with search and trends
+- **Dedicated WHO Health Data** `/who-data` with indicator explorer and license agreement
+- **Infinite Stats Marquee** with animated metrics loop
 - **Responsive Design** for all devices
 - **Smooth Animations** with Framer Motion
 - **Smooth Scrolling** navigation with react-scroll
@@ -59,10 +61,12 @@ src/
 │   ├── MapDocumentation.jsx  # Map usage documentation
 │   ├── APIExplorer.jsx       # Live API testing tool
 │   ├── GIProductsSection.jsx # Curated homepage GI preview
+│   ├── WorldBankSection.jsx  # Reusable World Bank indicators component
 │   └── Footer.jsx            # Footer with BD branding
 ├── pages/              # Page components
 │   ├── APIDocs.jsx           # Complete API documentation
-│   └── GIProductsPage.jsx    # Complete GI products catalog
+│   ├── GIProductsPage.jsx    # Complete GI products catalog
+│   └── WorldBankPage.jsx     # Full indicators explorer
 ├── services/           # API services
 │   └── api.js               # Axios API configuration
 ├── App.jsx             # Main app component

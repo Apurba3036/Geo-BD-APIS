@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Landmark, Building2, MapPin, Home, ShoppingBag, BarChart3 } from 'lucide-react'
+import { Landmark, Building2, MapPin, Home, ShoppingBag, BarChart3, Activity } from 'lucide-react'
 
 const Stats = () => {
   const stats = [
@@ -8,7 +8,8 @@ const Stats = () => {
     { number: "495+", label: "Upazilas", icon: MapPin, color: "from-purple-400 to-purple-600" },
     { number: "4,500+", label: "Unions", icon: Home, color: "from-orange-400 to-orange-600" },
     { number: "30+", label: "GI Products", icon: ShoppingBag, color: "from-pink-400 to-pink-600" },
-    { number: "50+", label: "World Bank Data", icon: BarChart3, color: "from-indigo-400 to-indigo-600" }
+    { number: "50+", label: "World Bank Data", icon: BarChart3, color: "from-indigo-400 to-indigo-600" },
+    { number: "35+", label: "WHO Health Info", icon: Activity, color: "from-emerald-400 to-emerald-600" }
   ]
 
   // Duplicate stats for infinite scroll effect

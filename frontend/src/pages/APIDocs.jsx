@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Copy, Check, ChevronRight, Book, Code, Zap } from 'lucide-react'
+import { Copy, Check, ChevronRight, Book, Code, Zap, Activity, ShieldCheck } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import toast from 'react-hot-toast'
 
@@ -352,70 +352,12 @@ const APIDocs = () => {
   "data": [
     {
       "sl_no": 1,
-      "application_no": "GI-01",
-      "application_date": "2015-09-01",
       "gi_product_name": "Jamdani",
       "category": "Textile",
-      "origin": "Narayanganj",
-      "short_description": "Jamdani is a fine muslin textile..."
+      "origin": "Narayanganj"
     }
   ],
   "count": 33
-}`
-        },
-        {
-          method: 'GET',
-          path: '/api/giproducts?category=Fruit',
-          description: 'Filter GI products by category or origin',
-          example: `curl "https://geo-bd-apis.onrender.com/api/giproducts?category=Fruit"`,
-          response: `{
-  "success": true,
-  "data": [
-    {
-      "sl_no": 3,
-      "application_no": "GI-03",
-      "gi_product_name": "Khirsapat Mango",
-      "category": "Fruit",
-      "origin": "Chapainawabganj",
-      ...
-    }
-  ],
-  "count": 6
-}`
-        },
-        {
-          method: 'GET',
-          path: '/api/giproducts/search?q=:query',
-          description: 'Search GI products by name, category, or origin',
-          example: `curl https://geo-bd-apis.onrender.com/api/giproducts/search?q=Mango`,
-          response: `{
-  "success": true,
-  "data": [
-    {
-      "sl_no": 3,
-      "gi_product_name": "Khirsapat Mango",
-      ...
-    }
-  ],
-  "count": 4
-}`
-        },
-        {
-          method: 'GET',
-          path: '/api/giproducts/:id',
-          description: 'Get a specific GI product by its sl_no or application_no',
-          example: `curl https://geo-bd-apis.onrender.com/api/giproducts/GI-01`,
-          response: `{
-  "success": true,
-  "data": {
-    "sl_no": 1,
-    "application_no": "GI-01",
-    "application_date": "2015-09-01",
-    "gi_product_name": "Jamdani",
-    "category": "Textile",
-    "origin": "Narayanganj",
-    "short_description": "Jamdani is a fine muslin textile with intricate patterns produced for centuries in Narayanganj along the Shitalakhya river. It flourished under Mughal patronage, declined during British rule, and has recently revived. It is woven using cotton and sometimes gold thread."
-  }
 }`
         }
       ]
@@ -429,44 +371,66 @@ const APIDocs = () => {
           path: '/api/worldbank',
           description: 'Get all World Bank development indicators for Bangladesh',
           example: `curl https://geo-bd-apis.onrender.com/api/worldbank`,
-          response: `[
-  {
-    "indicator": "Population, total",
-    "code": "SP.POP.TOTL",
-    "data": {
-      "1990": 111633717,
-      "2000": 134544304,
-      "2016": 160811932,
-      ...
-      "2024": 173562364
+          response: `[...]`
+        }
+      ]
+    },
+    who: {
+      title: 'WHO Health Data',
+      icon: '🏥',
+      endpoints: [
+        {
+          method: 'GET',
+          path: '/api/who',
+          description: 'Fetch all available WHO health indicators for Bangladesh',
+          example: `curl https://geo-bd-apis.onrender.com/api/who`,
+          response: `{
+  "success": true,
+  "count": 38,
+  "data": [
+    {
+      "uuid": "AC597B1",
+      "name": "Maternal mortality ratio",
+      "data": { "2021": 193.89, "2020": 151.84 }
     }
-  }
-]`
+  ]
+}`
         },
         {
           method: 'GET',
-          path: '/api/worldbank/:code',
-          description: 'Get specific development indicator by code (e.g., SP.POP.TOTL)',
-          example: `curl https://geo-bd-apis.onrender.com/api/worldbank/SP.POP.TOTL`,
+          path: '/api/who/:uuid',
+          description: 'Get historical data for a specific health indicator using its UUID',
+          example: `curl https://geo-bd-apis.onrender.com/api/who/AC597B1`,
           response: `{
-  "indicator": "Population, total",
-  "code": "SP.POP.TOTL",
-  "data": {
-    "1990": 111633717,
-    "2000": 134544304,
-    "2016": 160811932,
-    "2017": 162186147,
-    "2018": 163523103,
-    "2019": 164913055,
-    "2020": 166298024,
-    "2021": 167658854,
-    "2022": 169384897,
-    "2023": 171466990,
-    "2024": 173562364
-  }
+  "indicator": "Maternal mortality ratio",
+  "data": { "2021": 193.89, "2020": 151.84 }
 }`
         }
-      ]
+      ],
+      customContent: (
+        <div className="bg-amber-500/5 rounded-3xl p-8 border border-amber-500/10 mt-12">
+          <div className="flex items-center gap-3 mb-6">
+            <ShieldCheck className="w-6 h-6 text-amber-600" />
+            <h3 className="text-xl font-bold text-amber-900 dark:text-amber-400">WHO Data Terms of Use</h3>
+          </div>
+          <div className="space-y-4 text-sm text-amber-800/80 dark:text-amber-400/80 leading-relaxed">
+            <p className="font-bold">License: Creative Commons Attribution 4.0 International (CC BY 4.0)</p>
+            <p>The World Health Organization (“WHO”) encourages public access and use of the data that it collects and publishes on its web site data.who.int. Use of the data is subject to these mandatory Terms and Conditions.</p>
+            <div className="bg-[var(--bg)] p-6 rounded-2xl border border-amber-500/20 shadow-sm space-y-4 text-xs font-mono text-[var(--text)]">
+              <p><strong>Prohibited Uses:</strong></p>
+              <ul className="list-disc list-inside space-y-2">
+                <li>You shall not attempt to de-anonymise the Datasets or use the Datasets in a manner that falsifies or misrepresents their content.</li>
+                <li>You shall not, in connection with your use of the Datasets, state or imply that WHO endorses you.</li>
+              </ul>
+            </div>
+            <p><strong>Dispute Resolution:</strong> Any dispute relating to the interpretation or application of this license shall be subject to conciliation or arbitration in accordance with UNCITRAL Arbitration Rules.</p>
+            <div className="flex items-center gap-2 pt-4 border-t border-amber-500/10 text-emerald-600 font-medium italic">
+              <Activity className="w-4 h-4" />
+              <span>Developers must ensure these terms are passed down to end-users.</span>
+            </div>
+          </div>
+        </div>
+      )
     }
   }
 
@@ -593,6 +557,7 @@ const APIDocs = () => {
                       </div>
                     </motion.div>
                   ))}
+                  {section.customContent}
                 </div>
               </div>
             ))}

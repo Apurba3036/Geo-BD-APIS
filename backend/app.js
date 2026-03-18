@@ -11,6 +11,7 @@ const upazilaRoutes = require('./routes/upazilas');
 const unionRoutes = require('./routes/unions');
 const giProductRoutes = require('./routes/giproducts');
 const worldbankRoutes = require('./routes/worldbank');
+const whoRoutes = require('./routes/who');
 
 const app = express();
 
@@ -45,6 +46,7 @@ app.use('/api/upazilas', upazilaRoutes);
 app.use('/api/unions', unionRoutes);
 app.use('/api/giproducts', giProductRoutes);
 app.use('/api/worldbank', worldbankRoutes);
+app.use('/api/who', whoRoutes);
 
 // Health check
 app.get('/health', (req, res) => {
