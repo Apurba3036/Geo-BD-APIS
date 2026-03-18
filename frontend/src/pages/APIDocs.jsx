@@ -453,7 +453,7 @@ const APIDocs = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <h1 className="text-3xl font-bold text-[var(--text)] mb-2">API Documentation</h1>
-              <p className="text-[var(--text-muted)]">Complete guide for the GeoBD API endpoints</p>
+              <p className="text-[var(--text-muted)]">Complete guide for the API Hub endpoints</p>
             </div>
             <Link to="/" className="btn-secondary self-start sm:self-auto">
               Back to Home

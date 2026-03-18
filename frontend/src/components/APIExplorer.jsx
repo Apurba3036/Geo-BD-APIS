@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronDown, Code, Copy, CheckCircle, Loader } from 'lucide-react'
-import { geoAPI } from '../services/api'
+import { hubAPI } from '../services/api'
 import toast from 'react-hot-toast'
 
 const APIExplorer = () => {
@@ -57,7 +57,7 @@ const APIExplorer = () => {
   const loadDivisions = async () => {
     try {
       setLoading(true)
-      const response = await geoAPI.getDivisions()
+      const response = await hubAPI.getDivisions()
       setDivisions(response.data.data)
       updateAPIResponse('https://geo-bd-apis.onrender.com/api/divisions', response.data)
     } catch (error) {
@@ -70,7 +70,7 @@ const APIExplorer = () => {
   const loadDistricts = async (divisionId) => {
     try {
       setLoading(true)
-      const response = await geoAPI.getDistricts(divisionId)
+      const response = await hubAPI.getDistricts(divisionId)
       setDistricts(response.data.data)
       updateAPIResponse(`https://geo-bd-apis.onrender.com/api/districts?division_id=${divisionId}`, response.data)
     } catch (error) {
@@ -83,7 +83,7 @@ const APIExplorer = () => {
   const loadUpazilas = async (districtId) => {
     try {
       setLoading(true)
-      const response = await geoAPI.getUpazilas(districtId)
+      const response = await hubAPI.getUpazilas(districtId)
       setUpazilas(response.data.data)
       updateAPIResponse(`https://geo-bd-apis.onrender.com/api/upazilas?district_id=${districtId}`, response.data)
     } catch (error) {

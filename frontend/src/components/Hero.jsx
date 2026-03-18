@@ -76,7 +76,7 @@ const Hero = () => {
           >
             <span className="block mb-2">Bangladesh</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-emerald-600 to-red-600 bg-[length:200%_200%] animate-gradient pb-2">
-              Geo API Platform
+              API Hub Platform
             </span>
           </motion.h1>
 

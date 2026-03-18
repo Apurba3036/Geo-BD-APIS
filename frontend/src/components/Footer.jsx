@@ -18,10 +18,10 @@ const Footer = () => {
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center shadow-lg shadow-primary/30">
                 <img src="/bdicon.png" alt="BD" className="w-6 h-6 object-contain" />
               </div>
-              <span className="font-bold text-lg text-[var(--text)]">GeoBD API</span>
+              <span className="font-bold text-lg text-[var(--text)]">API Hub</span>
             </div>
             <p className="text-[var(--text-muted)] mb-4 max-w-md text-sm sm:text-base">
-              Bangladesh's open geo API platform. Free, fast, and developer-friendly access to geographical data.
+              Bangladesh's open API hub platform. Free, fast, and developer-friendly access to geographical data.
             </p>
             <div className="flex space-x-4">
               <a
@@ -33,7 +33,7 @@ const Footer = () => {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="mailto:info@geobd.com"
+                href="mailto:info@apihub.com"
                 className="p-2 rounded-xl bg-[var(--bg-tertiary)] text-[var(--text-muted)] hover:text-primary hover:bg-[var(--bg-secondary)] transition-all"
               >
                 <Mail className="w-5 h-5" />

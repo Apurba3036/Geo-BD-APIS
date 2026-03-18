@@ -47,7 +47,7 @@ const Navbar = () => {
             </motion.div>
             <div className="hidden sm:block">
               <span className="font-bold text-lg text-[var(--text)] group-hover:text-primary transition-colors">
-                GeoBD
+                API Hub
               </span>
               <span className="text-xs text-[var(--text-muted)] ml-1 hidden md:inline">API</span>
             </div>

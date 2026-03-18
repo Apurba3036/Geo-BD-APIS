@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Search, Activity, ArrowLeft, ChevronDown, ChevronUp, Clock, Info, ShieldCheck } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { geoAPI } from '../services/api'
+import { hubAPI } from '../services/api'
 import WHOTermsModal from '../components/WHOTermsModal'
 
 const WHOPage = () => {
@@ -22,7 +22,7 @@ const WHOPage = () => {
 
   const fetchData = async () => {
     try {
-      const response = await geoAPI.getWHOIndicators()
+      const response = await hubAPI.getWHOIndicators()
       setIndicators(response.data.data)
       setLoading(false)
     } catch (err) {

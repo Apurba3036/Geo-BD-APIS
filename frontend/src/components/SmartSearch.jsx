@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Search, MapPin, ExternalLink, Loader } from 'lucide-react'
-import { geoAPI } from '../services/api'
+import { hubAPI } from '../services/api'
 import toast from 'react-hot-toast'
 
 const SmartSearch = () => {
@@ -30,8 +30,8 @@ const SmartSearch = () => {
       
       // Search districts, upazilas, and unions
       const [districtsResponse, upazilasResponse] = await Promise.all([
-        geoAPI.searchDistricts(searchQuery),
-        geoAPI.searchUpazilas(searchQuery)
+        hubAPI.searchDistricts(searchQuery),
+        hubAPI.searchUpazilas(searchQuery)
       ])
 
       // Search unions separately

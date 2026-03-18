@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Search, Info, TrendingUp, BarChart3, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { geoAPI } from '../services/api'
+import { hubAPI } from '../services/api'
 
 const WorldBankSection = ({ isFullPage = false }) => {
   const [indicators, setIndicators] = useState([])
@@ -14,7 +14,7 @@ const WorldBankSection = ({ isFullPage = false }) => {
   useEffect(() => {
     const fetchIndicators = async () => {
       try {
-        const response = await geoAPI.getWorldBankIndicators()
+        const response = await hubAPI.getWorldBankIndicators()
         setIndicators(response.data)
         setLoading(false)
       } catch (err) {

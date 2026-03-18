@@ -1,6 +1,6 @@
-# 🇧🇩 GeoBD API Platform
+# 🇧🇩 Bangladesh API Hub
 
-**Bangladesh's official open geo API platform** - Complete modern product with interactive maps, live API testing, and comprehensive documentation.
+**Bangladesh's official open API hub platform** - Complete modern product with interactive maps, live API testing, and comprehensive documentation.
 
 ## 🎯 Overview
 
@@ -9,7 +9,7 @@ A complete full-stack application providing free API access to Bangladesh's comp
 ## 🏗️ Architecture
 
 ```
-GeoBD Platform/
+API Hub Platform/
 ├── backend/          # Node.js + Express + MongoDB API
 └── frontend/         # React + Tailwind + MapLibre GL
 ```
@@ -17,7 +17,7 @@ GeoBD Platform/
 ## 🚀 Features
 
 ### Backend (Node.js + MongoDB)
-- **RESTful API** for complete geo data
+- **RESTful API** for complete national data
 - **MVC Architecture** with controllers & models
 - **MongoDB** with Mongoose ODM + JSON fallback
 - **Rate limiting** & security middleware
@@ -138,7 +138,7 @@ GET /api/giproducts/:id               # Specific GI product
 cd backend
 npm install
 cp .env.example .env  # Configure MongoDB URI
-npm run seed          # Import Bangladesh geo data
+npm run seed          # Import Bangladesh national data
 npm run dev           # Start development server
 ```
 
@@ -276,7 +276,7 @@ VITE_API_URL=http://localhost:5000/api
 7. **Live Testing** - Real-time API explorer for developers
 8. **Interactive Maps** - Beautiful MapLibre GL integration
 9. **Union Coverage** - Complete 4,500+ union data with search
-10. **Production Ready** - Deployed at geobd.vercel.com
+10. **Production Ready** - Deployed hub at geobd.vercel.com
 
 ## 🌍 Live Deployment
 
@@ -310,15 +310,15 @@ We welcome contributions! Please follow these steps:
 - Update documentation as needed
 - Ensure all tests pass
 
-## � License
+##  License
 
 MIT License - Free forever 🇧🇩
 
 ## 📞 Support
 
-- **Documentation**: [https://geobd.vercel.com/docs](https://geobd.vercel.com/docs)
-- **Live Demo**: [https://geobd.vercel.com](https://geobd.vercel.com)
-- **API Explorer**: [https://geobd.vercel.com/#api-explorer](https://geobd.vercel.com/#api-explorer)
+- **Documentation**: [https://geobd.vercel.app/docs](https://geobd.vercel.app/docs)
+- **Live Demo**: [https://geobd.vercel.app](https://geobd.vercel.app)
+- **API Explorer**: [https://geobd.vercel.app/#api-explorer](https://geobd.vercel.app/#api-explorer)
 - **Issues**: [GitHub Issues](https://github.com/your-username/bangladesh-apis/issues)
 
 ## 🙏 Acknowledgments
@@ -330,9 +330,11 @@ MIT License - Free forever 🇧🇩
 
 ---
 
+
 <div align="center">
   <p>Made with ❤️ for Bangladesh 🇧🇩</p>
   <p><strong>Developed by Nazmus Sakib Apurba</strong></p>
   <p>Free forever • Open source • Community driven</p>
-  <p>Visit <a href="https://geobd.vercel.com">geobd.vercel.com</a> for live demo</p>
+  <p>Visit <a href="https://geobd.vercel.app">geobd.vercel.app</a> for live demo</p>
 </div>
+

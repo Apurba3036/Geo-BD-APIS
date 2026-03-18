@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { MapPin, ChevronDown, Loader } from 'lucide-react'
-import { geoAPI } from '../services/api'
+import { hubAPI } from '../services/api'
 import toast from 'react-hot-toast'
 import maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
@@ -219,7 +219,7 @@ const InteractiveMap = () => {
   const loadDivisions = async () => {
     try {
       setLoading(true)
-      const response = await geoAPI.getDivisions()
+      const response = await hubAPI.getDivisions()
       setDivisions(response.data.data)
     } catch (error) {
       toast.error('Failed to load divisions')
@@ -230,7 +230,7 @@ const InteractiveMap = () => {
 
   const loadAllDistricts = async () => {
     try {
-      const response = await geoAPI.getDistricts()
+      const response = await hubAPI.getDistricts()
       setAllDistricts(response.data.data)
     } catch (error) {
       toast.error('Failed to load all districts')
@@ -240,7 +240,7 @@ const InteractiveMap = () => {
   const loadDistricts = async (divisionId) => {
     try {
       setLoading(true)
-      const response = await geoAPI.getDistricts(divisionId)
+      const response = await hubAPI.getDistricts(divisionId)
       setDistricts(response.data.data)
     } catch (error) {
       toast.error('Failed to load districts')
@@ -364,7 +364,7 @@ const InteractiveMap = () => {
       let location = null
       
       if (type === 'district') {
-        const response = await geoAPI.getDistrict(id)
+        const response = await hubAPI.getDistrict(id)
         location = response.data.data
       }
       

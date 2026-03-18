@@ -8,7 +8,7 @@ const api = axios.create({
   timeout: 10000,
 })
 
-export const geoAPI = {
+export const hubAPI = {
   // Divisions
   getDivisions: () => api.get('/divisions'),
   getDivision: (id) => api.get(`/divisions/${id}`),
