@@ -337,6 +337,88 @@ const APIDocs = () => {
 }`
         }
       ]
+    },
+    giproducts: {
+      title: 'GI Products',
+      icon: '🛍️',
+      endpoints: [
+        {
+          method: 'GET',
+          path: '/api/giproducts',
+          description: 'Get all Geographical Indication (GI) products of Bangladesh',
+          example: `curl https://geo-bd-apis.onrender.com/api/giproducts`,
+          response: `{
+  "success": true,
+  "data": [
+    {
+      "sl_no": 1,
+      "application_no": "GI-01",
+      "application_date": "2015-09-01",
+      "gi_product_name": "Jamdani",
+      "category": "Textile",
+      "origin": "Narayanganj",
+      "short_description": "Jamdani is a fine muslin textile..."
+    }
+  ],
+  "count": 33
+}`
+        },
+        {
+          method: 'GET',
+          path: '/api/giproducts?category=Fruit',
+          description: 'Filter GI products by category or origin',
+          example: `curl "https://geo-bd-apis.onrender.com/api/giproducts?category=Fruit"`,
+          response: `{
+  "success": true,
+  "data": [
+    {
+      "sl_no": 3,
+      "application_no": "GI-03",
+      "gi_product_name": "Khirsapat Mango",
+      "category": "Fruit",
+      "origin": "Chapainawabganj",
+      ...
+    }
+  ],
+  "count": 6
+}`
+        },
+        {
+          method: 'GET',
+          path: '/api/giproducts/search?q=:query',
+          description: 'Search GI products by name, category, or origin',
+          example: `curl https://geo-bd-apis.onrender.com/api/giproducts/search?q=Mango`,
+          response: `{
+  "success": true,
+  "data": [
+    {
+      "sl_no": 3,
+      "gi_product_name": "Khirsapat Mango",
+      ...
+    }
+  ],
+  "count": 4
+}`
+        },
+        {
+          method: 'GET',
+          path: '/api/giproducts/:id',
+          description: 'Get a specific GI product by its sl_no or application_no',
+          example: `curl https://geo-bd-apis.onrender.com/api/giproducts/GI-01`,
+          response: `{
+  "success": true,
+  "data": {
+    "sl_no": 1,
+    "application_no": "GI-01",
+    "application_date": "2015-09-01",
+    "gi_product_name": "Jamdani",
+    "category": "Textile",
+    "origin": "Narayanganj",
+    "short_description": "Jamdani is a fine muslin textile with intricate patterns produced for centuries in Narayanganj along the Shitalakhya river. It flourished under Mughal patronage, declined during British rule, and has recently revived. It is woven using cotton and sometimes gold thread."
+  }
+}`
+        }
+      ]
     }
   }
 

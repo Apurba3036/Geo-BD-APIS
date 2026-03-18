@@ -96,7 +96,7 @@ const APIExplorer = () => {
   const loadUnions = async (upazilaId) => {
     try {
       setLoading(true)
-      const response = await fetch(`/api/unions?upazila_id=${upazilaId}`)
+      const response = await fetch(`https://geo-bd-apis.onrender.com/api/unions?upazila_id=${upazilaId}`)
       const data = await response.json()
       setUnions(data.data)
       updateAPIResponse(`https://geo-bd-apis.onrender.com/api/unions?upazila_id=${upazilaId}`, data)
@@ -110,7 +110,7 @@ const APIExplorer = () => {
   const loadUnionDetails = async (unionId) => {
     try {
       setLoading(true)
-      const response = await fetch(`/api/unions/${unionId}`)
+      const response = await fetch(`https://geo-bd-apis.onrender.com/api/unions/${unionId}`)
       const data = await response.json()
       updateAPIResponse(`https://geo-bd-apis.onrender.com/api/unions/${unionId}`, data)
     } catch (error) {

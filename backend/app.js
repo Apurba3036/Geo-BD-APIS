@@ -9,6 +9,7 @@ const divisionRoutes = require('./routes/divisions');
 const districtRoutes = require('./routes/districts');
 const upazilaRoutes = require('./routes/upazilas');
 const unionRoutes = require('./routes/unions');
+const giProductRoutes = require('./routes/giproducts');
 
 const app = express();
 
@@ -18,6 +19,8 @@ app.use(compression());
 app.use(cors({
   origin: [
     'http://localhost:3000',
+    'http://localhost:3001',
+    'http://localhost:5173',
     'https://geo-bd-apis.vercel.app',
     'https://geo-bd-apis.onrender.com'
   ],
@@ -39,6 +42,7 @@ app.use('/api/divisions', divisionRoutes);
 app.use('/api/districts', districtRoutes);
 app.use('/api/upazilas', upazilaRoutes);
 app.use('/api/unions', unionRoutes);
+app.use('/api/giproducts', giProductRoutes);
 
 // Health check
 app.get('/health', (req, res) => {

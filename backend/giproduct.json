@@ -1,0 +1,304 @@
+{
+  "gi_products_bangladesh": [
+    {
+      "sl_no": 1,
+      "application_no": "GI-01",
+      "application_date": "2015-09-01",
+      "gi_product_name": "Jamdani",
+      "category": "Textile",
+      "origin": "Narayanganj",
+      "short_description": "Jamdani is a fine muslin textile with intricate patterns produced for centuries in Narayanganj along the Shitalakhya river. It flourished under Mughal patronage, declined during British rule, and has recently revived. It is woven using cotton and sometimes gold thread."
+    },
+    {
+      "sl_no": 2,
+      "application_no": "GI-02",
+      "application_date": "2016-11-13",
+      "gi_product_name": "Ilish",
+      "category": "Fish",
+      "origin": "Chandpur",
+      "short_description": "Ilish (hilsa) is the national fish of Bangladesh and highly popular across South Asia. Bangladesh produces about 86% of the world's hilsa, with the finest from Chandpur District."
+    },
+    {
+      "sl_no": 3,
+      "application_no": "GI-03",
+      "application_date": "2017-02-02",
+      "gi_product_name": "Khirsapat Mango",
+      "category": "Fruit",
+      "origin": "Chapainawabganj",
+      "short_description": "Khirsapat mango from Chapainawabganj is a premium sweet variety cultivated commercially in five upazilas. It accounts for about 30% of Bangladesh's mango production, with origins tracing back around 200 years."
+    },
+    {
+      "sl_no": 4,
+      "application_no": "GI-05",
+      "application_date": "2017-02-06",
+      "gi_product_name": "Sadamati (White Clay of Bijoypur)",
+      "category": "Mineral/Handicraft",
+      "origin": "Netrokona (Vijaypur)",
+      "short_description": "Sadamati is a natural white clay from Vijaypur in Durgapur upazila, valued for its purity and used in crafts, famous for natural beauty and distributed nationwide."
+    },
+    {
+      "sl_no": 5,
+      "application_no": "GI-06",
+      "application_date": "2017-02-06",
+      "gi_product_name": "Kataribhog Rice",
+      "category": "Rice",
+      "origin": "Dinajpur",
+      "short_description": "Kataribhog is a slender, long-grained fragrant rice variety thriving in high sandy loam soils of Dinajpur, renowned for its aroma."
+    },
+    {
+      "sl_no": 6,
+      "application_no": "GI-07",
+      "application_date": "2017-02-07",
+      "gi_product_name": "Kalijira Rice",
+      "category": "Rice",
+      "origin": "Barisal region",
+      "short_description": "Kalijira is a famous fragrant rice resembling black cumin seeds, primarily from Patuakhali, Bhola, Jhalokati, and other Barisal areas."
+    },
+    {
+      "sl_no": 7,
+      "application_no": "GI-34",
+      "application_date": "2019-07-11",
+      "gi_product_name": "Shotoronji of Rangpur",
+      "category": "Handicraft",
+      "origin": "Rangpur",
+      "short_description": "Shotoronji is a traditional woven carpet/handicraft from Rangpur, used for warmth and decoration, now exported to over 50 countries."
+    },
+    {
+      "sl_no": 8,
+      "application_no": "GI-27",
+      "application_date": "2017-09-24",
+      "gi_product_name": "Silk of Rajshahi",
+      "category": "Textile",
+      "origin": "Rajshahi",
+      "short_description": "Rajshahi silk is a high-quality fabric famous for saris and clothing, granted GI status in 2021 for its superior texture and production."
+    },
+    {
+      "sl_no": 9,
+      "application_no": "GI-30",
+      "application_date": "2018-01-02",
+      "gi_product_name": "Muslin",
+      "category": "Textile",
+      "origin": "Dhaka",
+      "short_description": "Dhaka muslin is a legendary plain-weave cotton fabric, once the finest in the world during the 17th-18th centuries, named after Mosul but perfected in Bengal."
+    },
+    {
+      "sl_no": 10,
+      "application_no": "GI-15",
+      "application_date": "2017-03-09",
+      "gi_product_name": "Fazli Mango",
+      "category": "Fruit",
+      "origin": "Rajshahi",
+      "short_description": "Fazli mango is a large, late-maturing variety from Rajshahi Division, often weighing up to a kilo, now exported for its size and flavor."
+    },
+    {
+      "sl_no": 11,
+      "application_no": "GI-32",
+      "application_date": "2019-07-04",
+      "gi_product_name": "Bagda Chingri",
+      "category": "Shrimp",
+      "origin": "Coastal (Cox's Bazar, Khulna, etc.)",
+      "short_description": "Bagda (black tiger) shrimp is a premium brackish-water species, the largest shrimp variety, abundant in Bangladesh's coastal and estuarine areas, highly demanded globally."
+    },
+    {
+      "sl_no": 12,
+      "application_no": "GI-37",
+      "application_date": "2021-03-16",
+      "gi_product_name": "Shital-Pati",
+      "category": "Handicraft",
+      "origin": "Sylhet",
+      "short_description": "Shital-Pati is a cool mat woven from murta plant leaves, a traditional cottage industry famous in Sylhet, also sourced from Sirajganj, Barisal, Tangail, etc."
+    },
+    {
+      "sl_no": 13,
+      "application_no": "GI-29",
+      "application_date": "2018-01-01",
+      "gi_product_name": "Bogurar Doi",
+      "category": "Dairy",
+      "origin": "Bogra",
+      "short_description": "Bogurar Doi (Bogra curd) is a thick, sweet yogurt traditionally made in Sherpur Thana by local communities, now GI-recognized for its unique taste."
+    },
+    {
+      "sl_no": 14,
+      "application_no": "GI-31",
+      "application_date": "2018-04-11",
+      "gi_product_name": "Tulshi-Mala Rice",
+      "category": "Rice",
+      "origin": "Sherpur (Mymensingh)",
+      "short_description": "Tulshimala is a photosensitive Aman rice with dark gray grains, tall plants, and long kernels, grown in Sherpur and southern Padma districts."
+    },
+    {
+      "sl_no": 15,
+      "application_no": "GI-10",
+      "application_date": "2017-02-19",
+      "gi_product_name": "Langra Mango",
+      "category": "Fruit",
+      "origin": "Rajshahi, Chapainawabganj",
+      "short_description": "Langra mango, known as the king of mangoes, is round, smooth, and weighs 200-600g, widely grown but prominent in northwestern districts."
+    },
+    {
+      "sl_no": 16,
+      "application_no": "GI-11",
+      "application_date": "2017-02-19",
+      "gi_product_name": "Ashina Mango",
+      "category": "Fruit",
+      "origin": "Rajshahi, Chapainawabganj",
+      "short_description": "Ashina is a juicy, fiberless late-season mango available in August, large-sized, turning sweet and less sour when ripe."
+    },
+    {
+      "sl_no": 17,
+      "application_no": "GI-40",
+      "application_date": "2023-03-30",
+      "gi_product_name": "Kachagolla of Natore",
+      "category": "Sweet",
+      "origin": "Natore",
+      "short_description": "Kachagolla is a soft sweet made from raw cow milk curd, chickpeas, mawa, and cardamom, originating in Natore but available widely."
+    },
+    {
+      "sl_no": 18,
+      "application_no": "GI-28",
+      "application_date": "2017-10-25",
+      "gi_product_name": "Black Bengal Goat of Bangladesh",
+      "category": "Livestock",
+      "origin": "Nationwide",
+      "short_description": "Black Bengal goat is a small, hardy breed with high reproduction, disease resistance, and quality meat/skin, popular for low feed needs."
+    },
+    {
+      "sl_no": 19,
+      "application_no": "GI-41",
+      "application_date": "2023-03-30",
+      "gi_product_name": "Porabari Chomchom of Tangail",
+      "category": "Sweet",
+      "origin": "Tangail",
+      "short_description": "Porabari Chomchom (chum chum) is an oval Bengali sweet from chickpeas, coated in coconut/mawa, originating in Porabari with unique taste from local water."
+    },
+    {
+      "sl_no": 20,
+      "application_no": "GI-42",
+      "application_date": "2023-04-16",
+      "gi_product_name": "Rasmalai of Cumilla",
+      "category": "Sweet",
+      "origin": "Cumilla",
+      "short_description": "Rasmalai consists of chhena balls soaked in flavored milk cream, originated around 1900 in Cumilla, stuffed with saffron and pistachios."
+    },
+    {
+      "sl_no": 21,
+      "application_no": "GI-43",
+      "application_date": "2023-04-17",
+      "gi_product_name": "Tiler Khaja of Kushtia",
+      "category": "Confectionery",
+      "origin": "Kushtia",
+      "short_description": "Tiler Khaja is a flattened sesame seed candy, oblong and hollow inside, invented by the Teli community in Kushtia during undivided Bengal."
+    },
+    {
+      "sl_no": 22,
+      "application_no": "GI-04",
+      "application_date": "2017-02-15",
+      "gi_product_name": "Haribhanga Mango of Rangpur",
+      "category": "Fruit",
+      "origin": "Rangpur",
+      "short_description": "Haribhanga is a round, fleshy mango weighing 200-700g, popularized in northern districts like Mithapukur and Badarganj since early 2000s."
+    },
+    {
+      "sl_no": 23,
+      "application_no": "GI-19",
+      "application_date": "2017-04-12",
+      "gi_product_name": "Agar of Moulvibazar",
+      "category": "Aromatic",
+      "origin": "Moulvibazar",
+      "short_description": "Agar (agarwood) from Barlekha upazila is a jelly-like polysaccharide from red algae, known as 'white gold' for its value in local production."
+    },
+    {
+      "sl_no": 24,
+      "application_no": "GI-33",
+      "application_date": "2019-07-11",
+      "gi_product_name": "Agar Attar of Moulvibazar",
+      "category": "Perfume",
+      "origin": "Moulvibazar",
+      "short_description": "Agar Attar (oud) is a prized aromatic resin from agarwood, with rich fragrance due to local climate and soil, exported as luxury perfume."
+    },
+    {
+      "sl_no": 25,
+      "application_no": "GI-44",
+      "application_date": "2023-05-02",
+      "gi_product_name": "Muktagacha Monda",
+      "category": "Sweet",
+      "origin": "Mymensingh (Muktagachha)",
+      "short_description": "Muktagacha Monda is a famous sweet created in 1824 by Ram Gopal Pal, presented to local zamindars, now run by fifth-generation family."
+    },
+    {
+      "sl_no": 26,
+      "application_no": "GI-45",
+      "application_date": "2023-05-23",
+      "gi_product_name": "Jessore Molasses",
+      "category": "Sweetener",
+      "origin": "Jessore",
+      "short_description": "Jessore date molasses is a famous cottage industry product from British era, made from date palm sap, iconic to the district."
+    },
+    {
+      "sl_no": 27,
+      "application_no": "GI-49",
+      "application_date": "2023-08-29",
+      "gi_product_name": "Amrita Sagar Banana Narsingdi",
+      "category": "Fruit",
+      "origin": "Narsingdi",
+      "short_description": "Amrita Sagar banana is sweet, soft, and nutritious, integral to Narsingdi's culture and economy, thriving in local soil and climate."
+    },
+    {
+      "sl_no": 28,
+      "application_no": "GI-51",
+      "application_date": "2023-08-31",
+      "gi_product_name": "Sweet Betel Leaf of Rajshahi",
+      "category": "Leaf",
+      "origin": "Rajshahi",
+      "short_description": "Sweet betel leaf (mishti paan) from Rajshahi is high-quality, used in paan with areca nut, lime, coconut, and sweets for after-meal enjoyment."
+    },
+    {
+      "sl_no": 29,
+      "application_no": "GI-47",
+      "application_date": "2023-08-22",
+      "gi_product_name": "Rosogolla, Gopalganj",
+      "category": "Sweet",
+      "origin": "Gopalganj",
+      "short_description": "Gopalganj Rosogolla is a juicy, low-sweet chhena sweet in thin syrup, white and round, distinct in taste from other regions."
+    },
+    {
+      "sl_no": 30,
+      "application_no": "GI-35",
+      "application_date": "2019-07-17",
+      "gi_product_name": "Nakshi Katha Jamalpur",
+      "category": "Handicraft",
+      "origin": "Jamalpur",
+      "short_description": "Nakshi Kantha is an embroidered quilt from old cloth and thread, famous in Mymensingh-Jamalpur area for colorful patterns and kantha stitch."
+    },
+    {
+      "sl_no": 31,
+      "application_no": "GI-57",
+      "application_date": "2024-02-06",
+      "gi_product_name": "Tangail Saree",
+      "category": "Textile",
+      "origin": "Tangail",
+      "short_description": "Tangail Saree is a handwoven traditional saree with delicate craftsmanship, originating in Tangail district, a century-old heritage of Bangladesh."
+    },
+    {
+      "sl_no": 32,
+      "application_no": "N/A (recent)",
+      "application_date": "2024-09-24",
+      "gi_product_name": "Madhupur Pineapple",
+      "category": "Fruit",
+      "origin": "Tangail (Madhupur)",
+      "short_description": "Madhupur Pineapple is a juicy, sweet variety from Tangail's Madhupur region, known for its distinct flavor due to local soil and climate, registered in 2024."
+    },
+    {
+      "sl_no": 33,
+      "application_no": "N/A (recent)",
+      "application_date": "2025-04-30",
+      "gi_product_name": "Jamurki Sandesh",
+      "category": "Sweet",
+      "origin": "Tangail (Jamurki)",
+      "short_description": "Jamurki Sandesh is a traditional milk-based sweet from Tangail's Jamurki area, prized for its unique texture and taste, granted GI in 2025."
+    }
+  ],
+  "metadata": {
+    "note": "This JSON includes the original 31 products plus confirmed recent additions (e.g., from Wikipedia and government sources up to 2025). Total registered: ~55 as per 2025 reports (with more in process from a 494-product pipeline). Dates and details are approximated where exact application nos. unavailable; categories/origins inferred for consistency. For the absolute latest official list, check DPDT/Ministry of Industries Bangladesh."
+  }
+}

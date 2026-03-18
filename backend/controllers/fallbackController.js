@@ -5,6 +5,7 @@ let divisionsCache = null;
 let districtsCache = null;
 let upazilasCache = null;
 let unionsCache = null;
+let giProductsCache = null;
 
 async function loadData() {
   if (!divisionsCache) {
@@ -13,11 +14,13 @@ async function loadData() {
       const districtsData = JSON.parse(await fs.readFile(path.join(__dirname, '../districts.json'), 'utf8'));
       const upazilasData = JSON.parse(await fs.readFile(path.join(__dirname, '../upazilas.json'), 'utf8'));
       const unionsData = JSON.parse(await fs.readFile(path.join(__dirname, '../unions.json'), 'utf8'));
+      const giProductsData = JSON.parse(await fs.readFile(path.join(__dirname, '../giproduct.json'), 'utf8'));
       
       divisionsCache = divisionsData;
       districtsCache = districtsData;
       upazilasCache = upazilasData;
       unionsCache = unionsData;
+      giProductsCache = giProductsData.gi_products_bangladesh || [];
       
       console.log('✅ Loaded data from JSON files');
     } catch (error) {
@@ -213,6 +216,67 @@ exports.searchUnions = async (req, res) => {
     u.name.toLowerCase().includes(q.toLowerCase()) ||
     u.bn_name.includes(q)
   ).slice(0, 30) || [];
+  
+  res.json({
+    success: true,
+    data: results,
+    count: results.length
+  });
+};
+
+// GI Products
+exports.getAllGiProducts = async (req, res) => {
+  await loadData();
+  const { category, origin } = req.query;
+  let filteredProducts = giProductsCache || [];
+  
+  if (category) {
+    filteredProducts = filteredProducts.filter(p => p.category.toLowerCase() === category.toLowerCase());
+  }
+  if (origin) {
+    filteredProducts = filteredProducts.filter(p => p.origin.toLowerCase().includes(origin.toLowerCase()));
+  }
+  
+  res.json({
+    success: true,
+    data: filteredProducts,
+    count: filteredProducts.length
+  });
+};
+
+exports.getGiProductById = async (req, res) => {
+  await loadData();
+  const product = giProductsCache?.find(p => p.application_no === req.params.id || p.sl_no.toString() === req.params.id);
+  
+  if (!product) {
+    return res.status(404).json({
+      success: false,
+      message: 'GI Product not found'
+    });
+  }
+
+  res.json({
+    success: true,
+    data: product
+  });
+};
+
+exports.searchGiProducts = async (req, res) => {
+  await loadData();
+  const { q } = req.query;
+  
+  if (!q) {
+    return res.status(400).json({
+      success: false,
+      message: 'Search query is required'
+    });
+  }
+  
+  const results = giProductsCache?.filter(p => 
+    p.gi_product_name.toLowerCase().includes(q.toLowerCase()) ||
+    p.category.toLowerCase().includes(q.toLowerCase()) ||
+    p.origin.toLowerCase().includes(q.toLowerCase())
+  ) || [];
   
   res.json({
     success: true,

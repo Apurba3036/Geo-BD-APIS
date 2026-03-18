@@ -7,6 +7,8 @@ import APIExplorer from './components/APIExplorer'
 import Stats from './components/Stats'
 import Footer from './components/Footer'
 import APIDocs from './pages/APIDocs'
+import GIProductsSection from './components/GIProductsSection'
+import GIProductsPage from './pages/GIProductsPage'
 import { motion } from 'framer-motion'
 
 function App() {
@@ -20,10 +22,12 @@ function App() {
             <Hero />
             <Stats />
             <APIShowcase />
+            <GIProductsSection />
             <InteractiveMap />
             <APIExplorer />
           </main>
         } />
+        <Route path="/gi-products" element={<GIProductsPage />} />
         <Route path="/docs" element={<APIDocs />} />
       </Routes>
       

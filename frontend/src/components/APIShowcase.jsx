@@ -61,6 +61,23 @@ const APIShowcase = () => {
   ],
   "count": 9
 }`
+    },
+    {
+      method: 'GET',
+      endpoint: '/api/giproducts',
+      description: 'Get all Geographical Indication (GI) products of Bangladesh',
+      response: `{
+  "success": true,
+  "data": [
+    {
+      "sl_no": 1,
+      "gi_product_name": "Jamdani",
+      "category": "Textile",
+      "origin": "Narayanganj"
+    }
+  ],
+  "count": 33
+}`
     }
   ]
 
