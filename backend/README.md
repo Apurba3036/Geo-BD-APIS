@@ -9,9 +9,9 @@ Bangladesh Geo API Platform Backend - Clean, fast, developer-first API for Bangl
 - **Fast responses** with compression and rate limiting
 - **Developer-friendly** error handling
 - **Security** with Helmet.js
-- **Search functionality** for all administrative levels
+- **Search functionality** for all administrative levels and GI Products
 - **No Database Required** - Uses JSON files with caching
-- **Complete Coverage** - 8 divisions, 64 districts, 495+ upazilas, 4,500+ unions
+- **Complete Coverage** - 8 divisions, 64 districts, 495+ upazilas, 4500+ unions, and comprehensive Geographical Indications (GI).
 
 ## 📡 API Endpoints
 
@@ -46,6 +46,13 @@ GET /api/unions/:id                   # Get union by ID
 GET /api/unions/search?q=:query       # Search unions
 ```
 
+### Geographical Indications (GI)
+```
+GET /api/giproducts                   # Get all GI products
+GET /api/giproducts/:id               # Get a GI product by application no
+GET /api/giproducts/search?q=:query   # Search GI products by name or origin
+```
+
 ## 📊 Data Source
 
 **JSON Data Collected From:** [https://github.com/SudipMHX/bd-apis.git](https://github.com/SudipMHX/bd-apis.git)
@@ -55,6 +62,7 @@ GET /api/unions/search?q=:query       # Search unions
 - `districts.json` - 64 districts with coordinates
 - `upazilas.json` - 495+ upazilas with district relationships
 - `unions.json` - 4,500+ unions with upazila relationships
+- `giproduct.json` - Full catalog of certified GI products of Bangladesh
 
 ### Data Features:
 - **Complete Coverage** - All administrative levels
@@ -105,8 +113,9 @@ npm start      # Production
 
 ```env
 PORT=5000
-NODE_ENV=development
-CORS_ORIGIN=http://localhost:3000
+NODE_ENV=production
+# List of origins you can allow (Array syntax in app.js):
+CORS_ORIGIN=https://geo-bd-apis.vercel.app
 # MongoDB is NOT required - using JSON files
 ```
 
@@ -125,7 +134,8 @@ backend/
 │   ├── divisions.json
 │   ├── districts.json
 │   ├── upazilas.json
-│   └── unions.json
+│   ├── unions.json
+│   └── giproduct.json
 ├── app.js                       # Express app
 └── package.json
 ```

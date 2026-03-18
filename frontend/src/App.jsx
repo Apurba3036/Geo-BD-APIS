@@ -13,7 +13,7 @@ import { motion } from 'framer-motion'
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[var(--bg)]">
       <Navbar />
       
       <Routes>

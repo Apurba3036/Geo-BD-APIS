@@ -25,7 +25,8 @@ Modern, responsive frontend for the Bangladesh Geo API Platform with interactive
 - **Hero Section** with Bangladesh imagery and smooth scrolling
 - **Interactive Map** with MapLibre GL integration
 - **Live API Explorer** with real-time endpoint testing
-- **Complete API Documentation** with all 4 administrative levels
+- **Complete API Documentation** with all 4 administrative levels + GI Products
+- **Dedicated GI Products Catalog** `/gi-products` with advanced filtering
 - **Stats Section** with animated counters
 - **Responsive Design** for all devices
 - **Smooth Animations** with Framer Motion
@@ -57,9 +58,11 @@ src/
 │   ├── InteractiveMap.jsx    # MapLibre GL map component
 │   ├── MapDocumentation.jsx  # Map usage documentation
 │   ├── APIExplorer.jsx       # Live API testing tool
+│   ├── GIProductsSection.jsx # Curated homepage GI preview
 │   └── Footer.jsx            # Footer with BD branding
 ├── pages/              # Page components
-│   └── APIDocs.jsx           # Complete API documentation
+│   ├── APIDocs.jsx           # Complete API documentation
+│   └── GIProductsPage.jsx    # Complete GI products catalog
 ├── services/           # API services
 │   └── api.js               # Axios API configuration
 ├── App.jsx             # Main app component
@@ -137,8 +140,8 @@ npm run preview
 - **Clean Interface**: No division markers initially for better UX
 
 ### API Documentation
-- **Complete Coverage**: All 4 administrative levels (Divisions, Districts, Upazilas, Unions)
-- **Production URLs**: Ready-to-use geobd.vercel.com endpoints
+- **Complete Coverage**: All 4 administrative levels and Geographical Indications (GI).
+- **Production URLs**: Ready-to-use geo-bd-apis.onrender.com endpoints
 - **Interactive Examples**: Copy-to-clipboard functionality
 - **Search Examples**: Union search and filtering examples
 
@@ -177,10 +180,14 @@ npm run preview
 
 ## 🔧 Environment Variables
 
-Create a `.env` file in the root (optional - has defaults):
+Create a `.env` file in the root:
 
 ```env
+# Point to your local backend
 VITE_API_URL=http://localhost:5000/api
+
+# OR Point to the production backend
+# VITE_API_URL=https://geo-bd-apis.onrender.com/api
 ```
 
 ## 🌍 Navigation Features
@@ -207,10 +214,10 @@ VITE_API_URL=http://localhost:5000/api
 - **Caching**: Optimized API response handling
 
 ### Administrative Levels
-- **8 Divisions**: Complete division data
 - **64 Districts**: All districts with coordinates
 - **495+ Upazilas**: Sub-districts with relationships
 - **4,500+ Unions**: Complete union coverage
+- **Geographical Indications (GI)**: Certified national products with descriptions and categories
 
 ## �📝 License
 
@@ -224,5 +231,5 @@ MIT License - Free forever 🇧🇩
 4. **Smooth Navigation** - Professional scrolling experience
 5. **BD Branding** - Consistent Bangladesh theme
 6. **Developer First** - Tools and documentation
-7. **Production Ready** - Deployed at geobd.vercel.com
+7. **Production Ready** - API deployed on Render, Frontend on Vercel
 8. **Modern Stack** - Latest React and mapping technologies

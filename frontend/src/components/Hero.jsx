@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 import { Link as RouterLink } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { 
   MapPin, 
   FileCode, 
@@ -10,48 +9,21 @@ import {
   Globe, 
   Database, 
   Shield,
-  ChevronDown,
-  Image as ImageIcon
+  ChevronDown
 } from 'lucide-react'
 
-// Curated high-quality images for the hero carousel (Bangladesh landscapes & tech)
-const bgImages = [
-  '/image.png', // Original User Background Image
-  'https://images.unsplash.com/photo-1623944686419-48fbde59275e?q=80&w=2070&auto=format&fit=crop', // River/Nature
-  'https://images.unsplash.com/photo-1590053916962-d27ab6f685c4?q=80&w=2070&auto=format&fit=crop', // Ahsan Manzil / Architecture
-  'https://images.unsplash.com/photo-1598282367858-29ba04aee841?q=80&w=2070&auto=format&fit=crop', // Tea Garden
-  'https://images.unsplash.com/photo-1587807865768-3012a6cb8fbb?q=80&w=2070&auto=format&fit=crop', // Dhaka Cityscape
-]
-
 const Hero = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-
-  // Carousel auto-play effect
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % bgImages.length)
-    }, 5000) // Change image every 5 seconds
-    return () => clearInterval(timer)
-  }, [])
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
       
-      {/* Background Carousel */}
-      <AnimatePresence mode="popLayout">
-        <motion.div
-          key={currentImageIndex}
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 0.25, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${bgImages[currentImageIndex]})` }}
-        />
-      </AnimatePresence>
+      {/* Static Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-45"
+        style={{ backgroundImage: `url('/image.png')` }}
+      />
 
       {/* Dark gradient overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/40 to-[var(--bg)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-gray-900/30 to-[var(--bg)]" />
 
       {/* Animated Glowing Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
