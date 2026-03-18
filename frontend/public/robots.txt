@@ -1,0 +1,8 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://geo-bd-apis.vercel.app/sitemap.xml
+
+# Disallow nothing - this is a public API documentation site
